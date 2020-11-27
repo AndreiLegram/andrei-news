@@ -1,5 +1,5 @@
 {
-    "name": "andreilegram/andrei-news",
+    "name": "andrei/news",
     "description": "Gerenciador de noticias online.",
     "keywords": ["noticias", "framework", "laravel"],
     "license": "MIT",
