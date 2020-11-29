@@ -12,8 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::post('quiz', 'HomeController@quiz')->name('quiz');
-Route::post('resultado', 'HomeController@result')->name('result');
 
 Route::get('logout', 'HomeController@logout')->name('logout');
 
@@ -27,23 +25,13 @@ Route::middleware(['auth'])->group(function(){
         Route::delete('{id}', 'CategoryController@destroy')->name("categories.destroy");
     });
     
-    Route::prefix('questoes')->group(function(){
-        Route::get('', 'QuestionController@index')->name("questions.index");
-        Route::get('novo', 'QuestionController@create')->name("questions.create");
-        Route::post('', 'QuestionController@store')->name("questions.store");
-        Route::get('{id}', 'QuestionController@edit')->name("questions.edit");
-        Route::post('{id}', 'QuestionController@update')->name("questions.update");
-        Route::delete('{id}', 'QuestionController@destroy')->name("questions.destroy");
-    
-        Route::prefix('{question_id}/opcoes')->group(function(){
-            Route::get('', 'OptionController@index')->name("options.index");
-            Route::get('novo', 'OptionController@create')->name("options.create");
-            Route::post('', 'OptionController@store')->name("options.store");
-            Route::get('{id}', 'OptionController@edit')->name("options.edit");
-            Route::post('{id}', 'OptionController@update')->name("options.update");
-            Route::delete('{id}', 'OptionController@destroy')->name("options.destroy");
-        });
-    
+    Route::prefix('posts')->group(function(){
+        Route::get('', 'PostController@index')->name("posts.index");
+        Route::get('novo', 'PostController@create')->name("posts.create");
+        Route::post('', 'PostController@store')->name("posts.store");
+        Route::get('{id}', 'PostController@edit')->name("posts.edit");
+        Route::post('{id}', 'PostController@update')->name("posts.update");
+        Route::delete('{id}', 'PostController@destroy')->name("posts.destroy");
     });
     
     Route::prefix('usuarios')->group(function(){

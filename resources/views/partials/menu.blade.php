@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="#">LaraQuiz</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <a class="navbar-brand" href="{{ route('home') }}">AndreiNews</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvb" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,7 +9,7 @@
                 <a class="nav-link" href="{{ route('categories.index') }}">Categorias</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('questions.index') }}">Questões</a>
+                <a class="nav-link" href="{{ route('posts.index') }}">Notícias</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('users.index') }}">Usuários</a>

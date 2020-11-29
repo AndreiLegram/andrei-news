@@ -1,44 +1,28 @@
 @extends('partials.layout')
 
+<?php //var_dump($posts); die; ?>
+
 @section('content')
+@include('partials.menu')
 <div class="container">
     <div class="row mt-3">
         <div class="col-12">
-            <h1>LaraQuiz</h1>
-            <p class="lead">Faça aqui simulados para ENEM e vestibulares</p>
+            <h1>AndreiNews</h1>
+            <p class="lead">Veja aqui somente as notícias que o Andrei quer te mostrar.</p>
         </div>
     </div>
     <div class="row mt-3">
+        @foreach($posts as $post)
         <div class="col-12">
-            <form action="{{ route('quiz') }}" method="post">
-                {{ csrf_field() }}
-                <div class="form-row">
-                    <div class="form-group col-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Categoria</span>
-                            </div>
-                            <select name="category" id="category" class="form-control">
-                                @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Número de questões</span>
-                            </div>
-                            <input type="number" name="questions" id="questions" class="form-control" min="1" max="10" value="1">
-                        </div>
-                    </div>
-                    <div class="form-group col-4">
-                        <button type="submit" class="btn btn-block btn-success">Gerar Simulado</button>
-                    </div>
-                </div>
-            </form>
+            <h3>{{ $post->title }}</h3><br>
+            <p><strong>{{ $post->summary }}</strong></p><br>
+            <p>{{ $post->text }}</p><br>
+            @if($post->url_image)
+                <img style="max-width:200px" src="{{ asset('storage/posts/' . $post->url_image) }}" class="img-thumbnail mb-2">
+            @endif
+            <br><br><hr><br>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

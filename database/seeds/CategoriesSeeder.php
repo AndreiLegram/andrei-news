@@ -12,13 +12,26 @@ class CategoriesSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            ['name' => "Português"],
-            ['name' => "Matemática"],
-            ['name' => "História"],
-            ['name' => "Geografia"],
-            ['name' => "Biologia"],
-            ['name' => "Física"],
-            ['name' => "Química"]
+            [
+                'name' => "Crimes",
+                'description' => "Roubos, furtos, etc",
+                'active' => 1
+            ],
+            [
+                'name' => "Economia",
+                'description' => "Empresas, investimentos e mais",
+                'active' => 1
+            ],
+            [
+                'name' => "Política",
+                'description' => "Leis, discursos, entre outros",
+                'active' => 0
+            ],
+            [
+                'name' => "Arte",
+                'description' => "Músicos, atores e outros",
+                'active' => 0
+            ]
         ]);
     }
 }

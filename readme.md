@@ -1,25 +1,5 @@
-## Laraquiz
+## AndreiNews
 
-**users**
-- id
-- name
-- email
-- password
-
-**categories**
-- id
-- name
-
-**questions**
-- id
-- category_id
-- description
-- url_image
-
-**options**
-- id
-- question_id
-- description
-- correct
+Gerenciador de notícias online.
 
 *Desenvolvido por: Andrei Legramante*

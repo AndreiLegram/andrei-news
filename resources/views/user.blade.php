@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-12">
-            <h1>LaraQuiz - Usuários</h1>
+            <h1>AndreiNews - Usuários</h1>
         </div>
     </div>
 </div>
@@ -21,7 +21,7 @@
             @endif
 
                 {{ csrf_field() }}
-                <div class="form row">
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Nome</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Nome do usuário" value="{{ $user->name }}">
@@ -31,7 +31,7 @@
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email do usuário" value="{{ $user->email }}">
                     </div>
                 </div>
-                <div class="form row">
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="password">Senha</label>
                         <input type="password" name="password" id="password" class="form-control">

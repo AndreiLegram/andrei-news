@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-4 offset-4">
-            <h1 class="text-center">LaraQuiz</h1>
+            <h1 class="text-center">AndreiNews</h1>
             <form action="{{ route('login') }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-row">
