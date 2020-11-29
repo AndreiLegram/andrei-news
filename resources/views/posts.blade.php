@@ -27,7 +27,11 @@
                         <td>{{ $post->id }}</td>
                         <td>{{ ($post->active) ? 'Sim' : 'Não' }}</td>
                         <td>{{ $post->title }}</td>
-                        <td>{{ $post->category->name }}</td>
+                        @if(isset($post->category))
+                            <td>{{ $post->category->name }}</td>
+                        @else
+                            <td>Nenhuma</td>
+                        @endif
                         <td>{{ date_format($post->created_at, "d/m/Y - H:i") }}</td>
                         <td>
                             <form action="{{ route('posts.destroy', ['id' => $post->id]) }}" method="POST">

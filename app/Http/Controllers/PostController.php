@@ -38,7 +38,7 @@ class PostController extends Controller
             'title' => 'required|min:3',
             'summary' => 'required|min:3',
             'text' => 'required|min:3',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'exists:categories,id'
         ];
 
         $messages = [
@@ -48,7 +48,6 @@ class PostController extends Controller
             'summary.min' => "O campo lead deve ter no mínimo 3 caracteres",
             'text.required' => "O campo texto deve ser preenchido",
             'text.min' => "O campo texto deve ter no mínimo 3 caracteres",
-            'category_id.required' => "Uma categoria deve ser selecionada",
             'category_id.exists' => "Você deve selecionar uma categoria válida"
         ];
 
@@ -95,7 +94,7 @@ class PostController extends Controller
             'title' => 'required|min:3',
             'summary' => 'required|min:3',
             'text' => 'required|min:3',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'exists:categories,id'
         ];
 
         $messages = [
@@ -105,7 +104,6 @@ class PostController extends Controller
             'summary.min' => "O campo lead deve ter no mínimo 3 caracteres",
             'text.required' => "O campo texto deve ser preenchido",
             'text.min' => "O campo texto deve ter no mínimo 3 caracteres",
-            'category_id.required' => "Uma categoria deve ser selecionada",
             'category_id.exists' => "Você deve selecionar uma categoria válida"
         ];
 
